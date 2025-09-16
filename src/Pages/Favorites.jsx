@@ -1,7 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import "../css/Favorites.css";
 export default function Favorites() {
   return (
-    <div>Favorites</div>
-  )
+    <>
+      <div className="favorites-empty">
+        <h2>No favorites</h2>
+      </div>
+    </>
+  );
 }
