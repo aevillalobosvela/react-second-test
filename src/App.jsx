@@ -1,16 +1,10 @@
 import "./App.css";
-import MovieCard from "./Components/MovieCard";
+import Home from "./Pages/Home";
 
 function App() {
   return (
     <div>
-      <MovieCard movie={{
-        title: "Movie Name",
-        url: "https://www.youtube.com/watch?v=XXXXXXXXXXX",
-        year: 2023,
-        poster: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-        isFavorite: false
-      }}/>
+      <Home />
     </div>
   );
 }
