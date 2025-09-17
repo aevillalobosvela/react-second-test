@@ -3,10 +3,11 @@ import "./css/App.css";
 import Home from "./Pages/Home";
 import Favorites from "./Pages/Favorites";
 import NavBar from "./Components/NavBar";
+import { MovieProvider } from "./contexts/MovieContext";
 
 function App() {
   return (
-    <>
+    <MovieProvider>
       <NavBar />
       <main className="main content" >
         <Routes>
@@ -14,7 +15,7 @@ function App() {
           <Route path="/favorites" element={<Favorites />}></Route>
         </Routes>
       </main>
-    </>
+    </MovieProvider>
   );
 }
 

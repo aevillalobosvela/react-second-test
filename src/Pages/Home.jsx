@@ -13,7 +13,6 @@ export default function Home() {
     const loadMovies = async () => {
       try {
         const response = await getPopularMovies();
-        console.log(response);
         setMovies(response);
       } catch (err) {
         setError(error.message);
@@ -24,12 +23,22 @@ export default function Home() {
     loadMovies();
   }, []);
 
-  const handleSearch = (event) => {
+  const handleSearch = async (event) => {
     event.preventDefault();
-    alert(search);
-    setSearch("");
+    if (!search) return;
+    if (loading) return;
+  
+    setLoading(true);
+    try {
+      const response = await searchMovies(search); 
+      setMovies(response);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
-
+  
   return (
     <>
       <div className="home">
